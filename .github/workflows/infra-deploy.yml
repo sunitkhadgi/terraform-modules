@@ -7,11 +7,8 @@ on:
     - main
 env:
   WORKING_DIRECTORY: './environments/lightsail_instance/'
-  AWS_ACCESS_KEY_ID: AKIAVZBHJVXJHYIZPANV
-  AWS_SECRET_ACCESS_KEY: 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
-
-  # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 jobs:
   deployment:
