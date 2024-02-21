@@ -1,7 +1,10 @@
 name: 'Dev Deployment'
+# on:
+#   workflow_dispatch:
 on:
-  workflow_dispatch:
-
+  push:
+    branches:
+    - main
 env:
   WORKING_DIRECTORY: './environments/lightsail_instance/'
   AWS_ACCESS_KEY_ID: AKIAVZBHJVXJHYIZPANV
@@ -24,9 +27,13 @@ jobs:
           terraform_wrapper: false
 
       - name: Setup Terragrunt
-        uses: autero1/action-terragrunt@v1.1.0
-        with:
-          terragrunt_version: 0.55.2
+        run: |
+          sudo wget -q -O /bin/terragrunt "https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.4/terragrunt_linux_amd64"
+          sudo chmod +x /bin/terragrunt
+          terragrunt -v   
+        # uses: autero1/action-terragrunt@v1.1.0
+        # with:
+        #   terragrunt_version: 0.55.2
 
       - name: Interact with Terragrunt
         run: terragrunt --version
