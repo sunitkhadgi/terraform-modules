@@ -29,3 +29,31 @@ variable "instance_tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "instance_security_group" {
+  default     = {}
+  description = "A list of objects representing Lightsail instances with their respective security group configurations."
+  type        = map(string)
+
+
+}
+
+# variable "sg_name" {
+#   description = "The name of the Lightsail security group."
+
+# }
+
+# variable "sg_create" {
+#   description = "The name of the Lightsail security group."
+#   default     = false
+# }
+
+# variable "ingress_rules" {
+#   description = "A list of ingress rules for the security group."
+#   type        = list(object({
+#     protocol        = string
+#     from_port       = number
+#     to_port         = number
+#     cidr_blocks     = list(string)
+#   }))
+# }

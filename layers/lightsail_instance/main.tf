@@ -31,6 +31,54 @@ module "lightsailinstanceone" {
     Name        = "my-first-instance"
     Environment = "dev"
   }
+  # sg_name = "test1"
+  # sg_create = true
+  #   ingress_rules = [
+  #   {
+  #     protocol    = "tcp"
+  #     from_port   = 22
+  #     to_port     = 22
+  #     cidr_blocks = ["0.0.0.0/0"]
+  #   },
+  #   {
+  #     protocol    = "tcp"
+  #     from_port   = 80
+  #     to_port     = 80
+  #     cidr_blocks = ["0.0.0.0/0"]
+  #   },
+  #   {
+  #     protocol    = "tcp"
+  #     from_port   = 443
+  #     to_port     = 443
+  #     cidr_blocks = ["0.0.0.0/0"]
+  #   },
+    # Add more ingress rules as needed
+  # ]
+
+
+
+
+  # instance_security_group = [
+  #   {
+  #     name        = "instance1"
+  #     description = "Security group for instance1"
+  #     ingress_rules = [
+  #       {
+  #         protocol    = "tcp"
+  #         from_port   = 22
+  #         to_port     = 22
+  #         cidr_blocks = ["0.0.0.0/0"]
+  #       },
+  #       {
+  #         protocol    = "tcp"
+  #         from_port   = 80
+  #         to_port     = 80
+  #         cidr_blocks = ["0.0.0.0/0"]
+  #       },
+  #       # Add more ingress rules as needed for instance1
+  #     ]
+  #   }
+  # ]
 }
 
 module "lightsailinstancetwo" {
@@ -45,6 +93,23 @@ module "lightsailinstancetwo" {
     Name        = "my-first-instance"
     Environment = "prod"
   }  
+  # sg_name = "test2"
+
+  #   ingress_rules = [
+  #   {
+  #     protocol    = "tcp"
+  #     from_port   = 22
+  #     to_port     = 22
+  #     cidr_blocks = ["0.0.0.0/0"]
+  #   },
+  #   {
+  #     protocol    = "tcp"
+  #     from_port   = 80
+  #     to_port     = 80
+  #     cidr_blocks = ["0.0.0.0/0"]
+  #   },
+  #   # Add more ingress rules as needed
+  # ]
 }
 
 
