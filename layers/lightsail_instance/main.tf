@@ -19,12 +19,11 @@ provider "aws" {
 
 
 
-module "instanceone" {
+module "lightsailinstanceone" {
   source                = "../../modules/lightsail_instance"
   instance_name         = "my-first-instance"
-  bundle_id             = "nano_2_0"
-  blueprint_id          = "amazon_linux_2"
-  #key_pair_name         = "my-key-pair"
+  bundle_id             = "micro_3_0"
+  blueprint_id          = "ubuntu_22_04"
   availability_zone     = "us-east-1a"
   associate_elastic_ip  = true
   env                   = "dev"
@@ -34,13 +33,12 @@ module "instanceone" {
   }
 }
 
-module "instancetwo" {
+module "lightsailinstancetwo" {
   source                = "../../modules/lightsail_instance"
   instance_name         = "my-second-instance"
-  bundle_id             = "nano_2_0"
-  blueprint_id          = "amazon_linux_2"
+  bundle_id             = "micro_3_0"
+  blueprint_id          = "ubuntu_22_04"
   availability_zone     = "us-east-1a"
-  #key_pair_name         = "my-key-pair"
   associate_elastic_ip  = false
   env                   = "prod"
   instance_tags = {
